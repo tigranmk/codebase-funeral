@@ -1,0 +1,51 @@
+{
+  "name": "codebase-funeral",
+  "version": "0.1.0",
+  "description": "Give your dead repo the funeral it deserves: a eulogy generated from its git history.",
+  "type": "module",
+  "bin": {
+    "codebase-funeral": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/cli.ts --format esm --target node20 --clean",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "eulogy",
+    "archive",
+    "postmortem"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "commander": "^15.0.0",
+    "ora": "^9.4.1",
+    "picocolors": "^1.1.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tigranmk/codebase-funeral.git"
+  },
+  "homepage": "https://github.com/tigranmk/codebase-funeral#readme",
+  "bugs": {
+    "url": "https://github.com/tigranmk/codebase-funeral/issues"
+  }
+}
