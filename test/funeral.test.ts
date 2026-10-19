@@ -163,7 +163,8 @@ describe("cli", () => {
   const cli = (args: string[]) =>
     spawnSync(process.execPath, ["--import", "tsx", join(import.meta.dirname, "../src/cli.ts"), ...args], {
       encoding: "utf8",
-      env: { ...process.env, ANTHROPIC_API_KEY: "" },
+      // Plain output for the assertions: a color terminal (or the test runner) would otherwise add ANSI codes.
+      env: { ...process.env, ANTHROPIC_API_KEY: "", NO_COLOR: "1", FORCE_COLOR: undefined },
     });
 
   test("--version prints the package version", () => {
