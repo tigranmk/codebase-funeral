@@ -1,6 +1,6 @@
 {
   "name": "codebase-funeral",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Give your dead repo the funeral it deserves: a eulogy generated from its git history.",
   "type": "module",
   "bin": {
