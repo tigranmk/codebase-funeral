@@ -43,3 +43,7 @@ npm install
 npm run dev -- ../some-repo   # run from source
 npm run build                 # bundle to dist/
 ```
+
+## License
+
+[MIT](LICENSE)
